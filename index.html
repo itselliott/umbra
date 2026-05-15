@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     Umbra — link-hub / branding page
+     Links are wired. Drop this single file at the root of the
+     itselliott.github.io repo and enable GitHub Pages.
+     Self-contained: no build step, no dependencies.
+     ============================================================ -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbra — browser-extension risk auditor</title>
+<meta name="description" content="Umbra audits the extensions installed in a browser — or across a whole fleet — and scores each one for data-exfiltration risk, with a focus on risky AI extensions.">
+<meta property="og:title" content="Umbra — browser-extension risk auditor">
+<meta property="og:description" content="Know what your browser extensions can actually do.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%237c5cff'/%3E%3Ccircle cx='16' cy='16' r='7.5' fill='%23ffffff'/%3E%3Cpath d='M16 8.5a7.5 7.5 0 0 1 0 15z' fill='%232e216e'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0c0e13; --panel:#13161f; --panel-2:#1a1e2a; --border:#262b38;
+    --text:#e7e9f0; --muted:#9aa0b3; --muted-2:#5c6373;
+    --brand:#7c5cff; --brand-2:#a78bfa;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--bg);
+    background-image:radial-gradient(620px 380px at 50% -8%, rgba(124,92,255,.22), transparent 70%);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    display:flex;align-items:center;justify-content:center;
+    min-height:100%;padding:48px 22px;
+  }
+  .card{width:100%;max-width:460px;text-align:center}
+
+  .mark{
+    width:70px;height:70px;margin:0 auto 20px;border-radius:18px;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));
+    display:flex;align-items:center;justify-content:center;
+    font-size:38px;line-height:1;color:#fff;
+    box-shadow:0 12px 40px rgba(124,92,255,.4);
+  }
+  h1{font-size:31px;font-weight:800;letter-spacing:-.6px}
+  .tagline{
+    font-size:16px;color:var(--text);margin-top:8px;font-weight:500;
+    letter-spacing:-.1px;
+  }
+  .desc{
+    font-size:13.5px;color:var(--muted);line-height:1.65;
+    margin:14px auto 28px;max-width:404px;
+  }
+
+  .links{display:flex;flex-direction:column;gap:11px}
+  .link{
+    display:flex;align-items:center;gap:14px;
+    text-decoration:none;color:var(--text);text-align:left;
+    background:var(--panel);border:1px solid var(--border);
+    border-radius:14px;padding:14px 17px;
+    transition:border-color .15s ease, background .15s ease, transform .12s ease;
+  }
+  .link:hover{
+    border-color:var(--brand);background:var(--panel-2);
+    transform:translateY(-1px);
+  }
+  .link .l-text{flex:1;min-width:0}
+  .link .l-title{font-size:14.5px;font-weight:600}
+  .link .l-sub{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .link .arrow{
+    color:var(--muted-2);font-size:18px;line-height:1;flex-shrink:0;
+    transition:color .15s ease, transform .12s ease;
+  }
+  .link:hover .arrow{color:var(--brand);transform:translateX(2px)}
+
+  footer{
+    margin-top:30px;color:var(--muted-2);font-size:12px;line-height:1.6;
+  }
+  footer .runs{color:var(--muted);}
+
+  @media (max-width:420px){
+    body{padding:36px 16px}
+    h1{font-size:27px}
+    .mark{width:62px;height:62px;font-size:33px;border-radius:16px}
+  }
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="mark">◑</div>
+    <h1>Umbra</h1>
+    <p class="tagline">Know what your browser extensions can actually do.</p>
+    <p class="desc">
+      Umbra audits every extension installed in a browser — or across an entire
+      fleet — and scores each one for data-exfiltration risk, with a focus on the
+      new wave of risky AI extensions. It runs locally; nothing leaves the browser.
+    </p>
+
+    <nav class="links">
+      <a class="link" href="mailto:enwashingtonjr@gmail.com?subject=Umbra%20demo">
+        <span class="l-text">
+          <span class="l-title">Book a demo</span>
+          <span class="l-sub">Walk through the multi-tenant fleet console</span>
+        </span>
+        <span class="arrow">&rarr;</span>
+      </a>
+
+      <a class="link" href="https://github.com/itselliott/umbra">
+        <span class="l-text">
+          <span class="l-title">Source on GitHub</span>
+          <span class="l-sub">The full monorepo — extension, collector, backend</span>
+        </span>
+        <span class="arrow">&rarr;</span>
+      </a>
+
+      <a class="link" href="https://github.com/itselliott/umbra/blob/main/docs/how-its-built.md">
+        <span class="l-text">
+          <span class="l-title">How it&rsquo;s built</span>
+          <span class="l-sub">The architecture and implementation, end to end</span>
+        </span>
+        <span class="arrow">&rarr;</span>
+      </a>
+
+      <a class="link" href="mailto:enwashingtonjr@gmail.com">
+        <span class="l-text">
+          <span class="l-title">Get in touch</span>
+          <span class="l-sub">Questions, feedback, or a partnership</span>
+        </span>
+        <span class="arrow">&rarr;</span>
+      </a>
+    </nav>
+
+    <footer>
+      <span class="runs">Umbra</span> &middot; a shadow-AI extension auditor<br>
+      Runs locally &mdash; your data never leaves the browser.
+    </footer>
+  </main>
+</body>
+</html>
+
+<!-- ============================================================
+     HOSTING
+     Upload this file to the root of the itselliott.github.io repo,
+     then: Settings -> Pages -> Source "Deploy from a branch" ->
+     branch main, folder / (root) -> Save.
+     Live ~1-2 min later at https://itselliott.github.io
+     Edit and re-commit to update.
+     ============================================================ -->

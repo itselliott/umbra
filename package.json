@@ -1,0 +1,13 @@
+{
+  "name": "umbra",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Umbra — shadow-AI browser-extension risk auditor (monorepo)",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "sync-core": "node scripts/sync-core.js"
+  }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root{
+    --bg:#0c0e13; --panel:#13161f; --panel-2:#1a1e2a; --border:#262b38;
+    --text:#e7e9f0; --muted:#8b92a5; --muted-2:#646b80;
+    --brand:#7c5cff; --brand-dim:#2a2350;
+    --critical:#ff4d5e; --high:#ff8c42; --medium:#ffc53d; --low:#3ecf8e;
+    --critical-bg:rgba(255,77,94,.12); --high-bg:rgba(255,140,66,.12);
+    --medium-bg:rgba(255,197,61,.12); --low-bg:rgba(62,207,142,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:360px;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:13px}
+  .pad{padding:14px 15px}
+  .head{display:flex;align-items:center;gap:9px;border-bottom:1px solid var(--border);padding:13px 15px}
+  .mark{width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,var(--brand),#a78bfa);
+    display:flex;align-items:center;justify-content:center;font-size:14px}
+  .head b{font-size:14px;letter-spacing:-.2px}
+  .head .tag{font-size:9px;font-weight:700;color:var(--brand);background:var(--brand-dim);
+    padding:2px 5px;border-radius:4px;text-transform:uppercase;letter-spacing:.4px}
+  .head .spacer{flex:1}
+  .head .scanned{font-size:11px;color:var(--muted)}
+
+  .gradeRow{display:flex;align-items:center;gap:13px;margin-bottom:13px}
+  .grade{width:54px;height:54px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+    font-size:30px;font-weight:800;flex-shrink:0}
+  .gradeRow .gt{font-size:14px;font-weight:700}
+  .gradeRow .gs{font-size:11.5px;color:var(--muted);margin-top:2px;line-height:1.4}
+
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:13px}
+  .stat{background:var(--panel);border:1px solid var(--border);border-radius:9px;padding:9px 8px;text-align:center}
+  .stat .n{font-size:19px;font-weight:800;letter-spacing:-.5px}
+  .stat .l{font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;margin-top:1px}
+  .stat.crit .n{color:var(--critical)} .stat.high .n{color:var(--high)} .stat.ai .n{color:#b9a6ff}
+
+  .top{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);
+    font-weight:600;margin-bottom:7px}
+  .risk{display:flex;align-items:center;gap:9px;background:var(--panel);border:1px solid var(--border);
+    border-radius:9px;padding:8px 10px;margin-bottom:6px}
+  .risk .ri{width:24px;height:24px;border-radius:6px;flex-shrink:0;background:var(--panel-2);
+    display:flex;align-items:center;justify-content:center;font-size:12px;overflow:hidden}
+  .risk .ri img{width:100%;height:100%;object-fit:contain}
+  .risk .rn{flex:1;font-weight:600;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .risk .rp{font-weight:800;font-size:12px;padding:3px 7px;border-radius:6px;flex-shrink:0}
+  .s-critical{background:var(--critical-bg);color:var(--critical)}
+  .s-high{background:var(--high-bg);color:var(--high)}
+  .s-medium{background:var(--medium-bg);color:var(--medium)}
+  .s-low{background:var(--low-bg);color:var(--low)}
+  .clean{background:var(--low-bg);border:1px solid rgba(62,207,142,.3);color:#9fe7c6;
+    border-radius:9px;padding:11px;font-size:12px;text-align:center}
+
+  .btn{display:block;width:100%;text-align:center;margin-top:12px;border:none;cursor:pointer;
+    background:var(--brand);color:#fff;font-weight:700;font-size:13px;padding:10px;border-radius:9px;
+    font-family:inherit;transition:.15s}
+  .btn:hover{background:#6b4ff0}
+  .foot{font-size:10px;color:var(--muted-2);text-align:center;margin-top:9px;line-height:1.5}
+  .loading{padding:34px 15px;text-align:center;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="mark">◑</div>
+    <b>Umbra</b>
+    <span class="tag">Demo</span>
+    <span class="spacer"></span>
+    <span class="scanned" id="scanned"></span>
+  </div>
+  <div class="pad" id="body">
+    <div class="loading">Scanning your installed extensions…</div>
+  </div>
+  <script src="audit.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

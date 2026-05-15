@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Umbra Collector",
+  "version": "0.1.0",
+  "description": "Managed agent for Umbra. Reports this device's browser-extension inventory to your organization's Umbra console. Deployed and configured by your IT team or MSP.",
+  "permissions": ["management", "storage", "alarms"],
+  "host_permissions": ["http://localhost:3000/*", "https://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "storage": {
+    "managed_schema": "managed_schema.json"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Umbra Collector — managed",
+    "default_icon": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" }
+  },
+  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" }
+}

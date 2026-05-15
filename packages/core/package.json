@@ -1,0 +1,7 @@
+{
+  "name": "@umbra/core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Umbra shared risk-scoring engine — the single source of truth used by the extension builds and the backend",
+  "main": "audit.js"
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbra — Extension Risk Audit</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="logo">
+      <div class="mark">◑</div> Umbra <span class="beta">Demo</span>
+    </div>
+    <div class="spacer"></div>
+    <button class="icon-btn" id="shuffleBtn" title="Shuffle theme">🎲</button>
+    <button class="icon-btn" id="resetThemeBtn" title="Reset theme">↺</button>
+    <div class="scope-pill">🖥️ <b id="scopeLabel">This browser</b> <span id="scopeCount"></span></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="page">
+    <div class="page-title">
+      <div>
+        <h1>Extension Risk Audit</h1>
+        <p>Every extension installed in this browser, scored locally for data-exfiltration
+           risk — with a focus on risky AI extensions. Nothing leaves your device.</p>
+      </div>
+      <div class="scan-meta">
+        <span class="scan-dot"></span>
+        <span class="scan-time" id="scanTime">Scanning…</span>
+        <button class="btn" id="rescanBtn">↻ Re-scan</button>
+        <div class="export-wrap">
+          <button class="btn primary" id="exportBtn">Export ▾</button>
+          <div class="export-menu" id="exportMenu" hidden>
+            <button data-export="pdf"><b>Printable report</b><span>Open, then Save as PDF</span></button>
+            <button data-export="csv"><b>CSV spreadsheet</b><span>One row per extension</span></button>
+            <button data-export="json"><b>JSON data</b><span>Full raw audit output</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards" id="cards"></div>
+
+    <div class="hero" id="hero" style="display:none">
+      <div class="ico" id="heroIco">🚨</div>
+      <div style="flex:1">
+        <h2 id="heroTitle"></h2>
+        <p id="heroText"></p>
+        <div class="acts" id="heroActs"></div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="chips" id="chips"></div>
+      <div class="search">
+        <input id="search" type="text" placeholder="Search extensions…" autocomplete="off">
+      </div>
+    </div>
+  </header>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Extension</th>
+          <th>Flags</th>
+          <th>Installed</th>
+          <th>Top permission</th>
+          <th>Risk</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <footer>
+    Umbra · Shadow-AI Extension Auditor — concept build, <code>v0.1.0</code>.<br>
+    Scores are computed locally from the <code>chrome.management</code> API. Reputation signals
+    (verified-publisher and known-bad lists, ownership-change and Web&nbsp;Store-removal detection)
+    are seeded here and fully populated by the cloud threat-intelligence service in the production version.
+  </footer>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer"></aside>
+<div class="toast" id="toast"></div>
+
+<script src="audit.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

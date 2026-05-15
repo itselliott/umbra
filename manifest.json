@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Umbra — Shadow-AI Extension Auditor",
+  "version": "0.1.0",
+  "description": "Audits every browser extension you have installed for data-exfiltration risk, with a focus on risky AI extensions. Runs 100% locally — nothing leaves your browser.",
+  "permissions": ["management", "storage", "notifications"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Umbra — audit your extensions",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

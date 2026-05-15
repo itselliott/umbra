@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "enrollmentToken": {
+      "title": "Enrollment token",
+      "description": "The client organization's enrollment token, copied from the Umbra console.",
+      "type": "string"
+    },
+    "apiBase": {
+      "title": "API base URL",
+      "description": "Base URL of the Umbra backend, e.g. https://api.umbra.example",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
